@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+//    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -51,6 +54,7 @@ android {
 
 dependencies {
 
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -61,6 +65,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.firebase.firestore)
 //    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
