@@ -54,6 +54,7 @@ android {
 
 dependencies {
 
+
     implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation(libs.androidx.core.ktx)
