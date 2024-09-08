@@ -13,14 +13,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import elfak.mosis.routeexplorer.ui.theme.RouteExplorerTheme
-import viewModels.LoginViewModel
+import elfak.mosis.routeexplorer.viewModels.LoginViewModel
+
 //import viewModels.*
 
 class MainActivity : ComponentActivity() {
 
-    private val loginViewModel: LoginViewModel by viewModels {
-        LoginViewModelFactory((application as MainApplication).container.userRepository)
-    }
+//    private val loginViewModel2: LoginViewModel2 by viewModels {
+//        LoginViewModelFactory((application as MainApplication).container.userRepository)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +58,7 @@ fun GreetingPreview() {
             color=MaterialTheme.colorScheme.background
         ){
             RouteExplorerApp(
-                loginViewModel
+                LoginViewModel()
                 )
         }
         //Greeting("Android")

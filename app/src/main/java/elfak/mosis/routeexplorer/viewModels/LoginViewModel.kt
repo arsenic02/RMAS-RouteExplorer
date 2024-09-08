@@ -1,4 +1,5 @@
-package viewModels
+package elfak.mosis.routeexplorer.viewModels
+
 
 
 import androidx.compose.runtime.getValue

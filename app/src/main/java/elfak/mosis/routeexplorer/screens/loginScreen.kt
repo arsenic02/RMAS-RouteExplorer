@@ -51,6 +51,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import elfak.mosis.routeexplorer.R
+import elfak.mosis.routeexplorer.viewModels.LoginViewModel
 
 @Composable
 fun LoginScreen(navController: NavController, loginViewModel: LoginViewModel) {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3989046128",
+    "project_id": "routeexplorer-4ba60",
+    "storage_bucket": "routeexplorer-4ba60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3989046128:android:d8d50cb2f5b18df64dc5b5",
+        "android_client_info": {
+          "package_name": "elfak.mosis.routeexplorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfGKWnDrKFUVhctT25J6chH-O9ReGVIk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
