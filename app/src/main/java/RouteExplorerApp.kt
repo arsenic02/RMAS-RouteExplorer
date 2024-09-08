@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -15,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import elfak.mosis.routeexplorer.viewModels.LoginViewModel
+import elfak.mosis.routeexplorer.viewModels.UserViewModel
 
 enum class Screens{
     Login,
@@ -26,20 +28,22 @@ enum class Screens{
 @Composable
 fun RouteExplorerApp(
     loginViewModel: LoginViewModel,
+    userViewModel: UserViewModel,
    // registerViewModel:RegisterViewModel,
 ) {
+    val currentUser by userViewModel.currentUser.collectAsState()
     var isLoading by remember { mutableStateOf(true) }
 
-//    Box(
-//        modifier = Modifier.fillMaxSize(),
-//        contentAlignment = Alignment.Center
-//    ) {
-//        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-//            CircularProgressIndicator()
-//            Spacer(Modifier.height(4.dp))
-//            Text("Loading...")
-//        }
-//    }
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            CircularProgressIndicator()
+            Spacer(Modifier.height(4.dp))
+            Text("Loading...")
+        }
+    }
 
     Box(
         modifier = Modifier.fillMaxSize(),

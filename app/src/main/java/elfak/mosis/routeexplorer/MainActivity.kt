@@ -18,6 +18,8 @@ import elfak.mosis.routeexplorer.data.repository.UserRepository
 import elfak.mosis.routeexplorer.ui.theme.RouteExplorerTheme
 import elfak.mosis.routeexplorer.viewModels.LoginViewModel
 import elfak.mosis.routeexplorer.viewModels.LoginViewModelFactory
+import elfak.mosis.routeexplorer.viewModels.UserViewModel
+import elfak.mosis.routeexplorer.viewModels.UserViewModelFactory
 
 //import viewModels.*
 
@@ -25,6 +27,13 @@ class MainActivity : ComponentActivity() {
 
     private val loginViewModel: LoginViewModel by viewModels {
         LoginViewModelFactory((application as MainApplication).container.userRepository)
+    }
+
+    private val userViewModel: UserViewModel by viewModels {
+        UserViewModelFactory(
+            userRepository = (application as MainApplication).container.userRepository
+            //locationClient = (application as MainApplication).container.locationClient
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +45,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    RouteExplorerApp(loginViewModel)
+                    RouteExplorerApp(
+                        loginViewModel,
+                        userViewModel
+                        )
 
                     //Greeting("Android")
                 }

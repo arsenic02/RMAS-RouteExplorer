@@ -40,18 +40,18 @@ class LoginViewModel(private val userRepository: UserRepository): ViewModel(){
 
     }
 
-//    fun signOut(callback: (Boolean) -> Unit) {
-//        viewModelScope.launch {
-//            userRepository.signOut { success ->
-//                if (success) {
-//                    callback(true)
-//                } else {
-//                    callback(false)
-//                }
-//
-//            }
-//        }
-//    }
+    fun signOut(callback: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            userRepository.signOut { success ->
+                if (success) {
+                    callback(true)
+                } else {
+                    callback(false)
+                }
+
+            }
+        }
+    }
 }
 
 class LoginViewModelFactory(private val userRepository: UserRepository) :
